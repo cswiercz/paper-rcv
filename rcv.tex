@@ -592,9 +592,9 @@ print z3
 print numpy.linalg.norm( J((z2-z1) - z3) )
 \end{ipythoninput}
 \begin{ipythonoutput}
-[[-0.5261+0.0864j  0.0669+0.6392j -0.7495+1.1037j -1.5030+1.0356j]]
-[[-0.3875+0.1157j -0.0290+0.4437j -0.4532+0.7774j -0.9721+0.6732j]]
-[[ 0.1468-0.0985j  0.8467+0.6989j  0.0996+1.0083j -1.1003+0.8159j]]
+[-0.5261+0.0864j  0.0669+0.6392j -0.7495+1.1037j -1.5030+1.0356j]
+[-0.3875+0.1157j -0.0290+0.4437j -0.4532+0.7774j -0.9721+0.6732j]
+[ 0.1468-0.0985j  0.8467+0.6989j  0.0996+1.0083j -1.1003+0.8159j]
 3.80631643473e-16
 \end{ipythonoutput}
 The Abel map accepts divisors as well.
@@ -607,7 +607,7 @@ z = J(3*z1 + z2)
 print numpy.linalg.norm(w-z)
 \end{ipythoninput}
 \begin{ipythonoutput}
-[[ 0.0670-0.1361j  0.9421+0.7429j -0.4887+0.7663j -1.5057+0.6992j]]
+[ 0.0670-0.1361j  0.9421+0.7429j -0.4887+0.7663j -1.5057+0.6992j]
 1.57107346e-15
 \end{ipythonoutput}
 \end{example}
@@ -1323,7 +1323,7 @@ P0 = X.base_place()
 print K(P0)
 \end{ipythoninput}
 \begin{ipythonoutput}
-[[ 0.8488+0.7203j -0.5941-0.1146j -0.7432+0.8913j -0.8189+1.1381j]]
+[ 0.8488+0.7203j -0.5941-0.1146j -0.7432+0.8913j -0.8189+1.1381j]
 \end{ipythonoutput}
 We computationally verify that the RCV satisfies Theorems
 \ref{thm:rcvequiv} and \ref{thm:thetadivisor}. First, we demonstrate
@@ -1336,7 +1336,7 @@ z = J(2*K(P0) + AbelMap(C3))
 print z
 \end{ipythoninput}
 \begin{ipythonoutput}
-[[ 0.+0.j  0.+0.j -0.-0.j -0.-0.j]]
+[ 0.+0.j  0.+0.j -0.-0.j -0.-0.j]
 \end{ipythonoutput}
 Next, we verify that $\RCV(P_0)$ belongs to the theta divisor. To test
 for membership we factor the Riemann theta function into its exponential
