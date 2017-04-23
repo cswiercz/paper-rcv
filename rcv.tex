@@ -207,25 +207,17 @@ is the development of algorithms capable of dealing with arbitrary
 compact connected Riemann surfaces, as is required for the investigation
 of solutions of, for instance, the KP equation \cite{DS98,Shiota86}.
 
-In this paper we present a mathematical algorithm for computing the
-Riemann constant vector (RCV) and a demonstration of an implementation
-of this algorithm in {\sc abelfunctions}, an open--source Python
-library. The software implementation details, documentation, additional
-examples, and installation instructions are found on the project website
-\cite{abelfunctions}. The computational examples are presented in the
-style of an iPython notebook. The notebook itself can be downloaded from
-the project website.
-
-
+In this paper we present a mathematical algorithm for computing the Riemann
+constant vector (RCV) and a demonstration of its implementation in {\sc
+  abelfunctions}, an open--source Python library. The software implementation
+details, documentation, additional examples, and installation instructions are
+found on the project website \cite{abelfunctions} as well as the computational
+examples presented in this paper in the form of an iPython notebook.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definitions and Background}\label{sec:background}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% %------------------------------------------------------------------------------
-%% \subsection{Riemann Surfaces}
-%% %------------------------------------------------------------------------------
 
 In this section the required ingredients from the theory of Riemann
 surfaces are introduced. Details can be found in the standard references
@@ -1400,6 +1392,47 @@ This work was generously supported by the National Science Foundation
 under grant NSF-DMS-1008001. Any opinions, findings, and conclusions or
 recommendations expressed in this material are those of the authors and
 do not necessarily reflect the views of the funding sources.
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \section*{Appendix}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Let $\boldsymbol{h}$ be a half-period of the period lattice
+%% $\Lambda$. (Sometimes called a {\it theta characteristic}). That is, we can
+%% write $\boldsymbol{h} = \alpha + \Omega \beta$ where $\alpha, \beta \in
+%% \{0,\tfrac{1}{2}\}^g$. A theta characteristic is called {\it even} ({\it odd})
+%% if $4 \alpha \cdot \beta$ is even (odd). For all integer vectors $m,n \in
+%% \ZZ^g$ we have
+%% \begin{equation} \label{eqn:charidentity}
+%%   \theta[\alpha + m, \beta + n](z, \Omega)
+%%   =
+%%   e^{2 \pi i \alpha \cdot n}\theta[\alpha,\beta](z, \Omega)
+%% \end{equation}
+%% As a result, the Riemann theta function vanishes at odd theta characteristics
+%% since
+%% \begin{align}
+%%   \theta(\boldsymbol{h}, \Omega)
+%%   &=
+%%   \theta[\alpha, \beta](0, \Omega) \notag \\
+%%   &=
+%%   \theta[-\alpha + 2\alpha, -\beta + 2\beta](0, \Omega) \notag \\
+%%   &=
+%%   e^{4 \pi i \alpha \cdot \beta}
+%%   \theta[-\alpha, -\beta](0, \Omega) \notag \\
+%%   &=
+%%   -\theta(-\boldsymbol{h}, \Omega)
+%%   =
+%%   -\theta(\boldsymbol{h}, \Omega).
+%% \end{align}
+%% The last line follows from the fact that $\theta(-z,\Omega) = \theta(z,\Omega)$
+%% for all $z \in \CC^g$. Therefore, by Theorem \ref{thm:thetadivisor} there
+%% exists a degree $g-1$ divisor $\DivD_{\boldsymbol{h}}$ such that
+%% \begin{equation} \label{eqn:halfdivisor}
+%%   \boldsymbol{h} = \Abel(P_0, \DivD_{\boldsymbol{h}}) + \RCV(P_0)
+%%   \quad \Rightarrow \quad
+%%   \RCV(P_0) = \boldsymbol{h} - \Abel(P_0, \DivD_{\boldsymbol{h}}).
+%% \end{equation}
+
 
 %%%% REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{amsplain}
